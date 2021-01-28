@@ -64,7 +64,7 @@ public class PokemonRestController extends AbstractRestController {
 			}
 			pokemonHeightListDto.setPokemonHeightDtoList(pokemonHeightDtoList);
 			pokemonHeightListDto.setCommon(new Common(Common.ACK_OK));
-			pokemonHeightListDto.setMessage("Modem Found");
+			pokemonHeightListDto.setMessage("Pokemons Found");
 			return new ResponseEntity<>(pokemonHeightListDto, HttpStatus.OK);
 		} catch (Exception exception) {
 			logger.error(exception.getMessage(), exception);
@@ -91,7 +91,7 @@ public class PokemonRestController extends AbstractRestController {
 			}
 			pokemonBaseExperieneListDto.setPokemonBaseExperienceDtoList(baseExperienceDtoList);
 			pokemonBaseExperieneListDto.setCommon(new Common(Common.ACK_OK));
-			pokemonBaseExperieneListDto.setMessage("Modem Found");
+			pokemonBaseExperieneListDto.setMessage("Pokemons Found");
 			return new ResponseEntity<>(pokemonBaseExperieneListDto, HttpStatus.OK);
 		} catch (Exception exception) {
 			logger.error(exception.getMessage(), exception);
@@ -118,7 +118,7 @@ public class PokemonRestController extends AbstractRestController {
 			}
 			pokemonWeightListDto.setPokemonWeightDtoList(weightDtoList);
 			pokemonWeightListDto.setCommon(new Common(Common.ACK_OK));
-			pokemonWeightListDto.setMessage("Modem Found");
+			pokemonWeightListDto.setMessage("Pokemons Found");
 			return new ResponseEntity<>(pokemonWeightListDto, HttpStatus.OK);
 		} catch (Exception exception) {
 			logger.error(exception.getMessage(), exception);
