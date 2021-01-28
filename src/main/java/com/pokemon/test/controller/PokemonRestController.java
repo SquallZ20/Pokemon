@@ -9,6 +9,7 @@ import com.pokemon.test.dto.PokemonRedDto;
 import com.pokemon.test.dto.PokemonWeightDto;
 import com.pokemon.test.dto.PokemonWeightListDto;
 import com.pokemon.test.dto.SimpleResult;
+import com.pokemon.test.enumeration.ErrorCode;
 import com.pokemon.test.model.PokemonEntity;
 import com.pokemon.test.service.PokemonsService;
 import org.springframework.http.HttpStatus;
@@ -43,10 +44,11 @@ public class PokemonRestController extends AbstractRestController {
 		} catch (Exception exception) {
 			logger.error(exception.getMessage(), exception);
 			logger.error("Error on calling Get Pokemons Red");
-			simpleResult.setCommon(new Common(Common.ACK_KO, it.thinkopen.milanoteleport.modemmonitor.enumeration.ErrorCode.GENERIC_ERROR));
+			simpleResult.setCommon(new Common(Common.ACK_KO, ErrorCode.GENERIC_ERROR));
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+
 	@GetMapping("/getPokemonsHighest")
 	public ResponseEntity<PokemonHeightListDto> getPokemonsHighest() {
 		PokemonHeightListDto pokemonHeightListDto = new PokemonHeightListDto();
@@ -55,8 +57,8 @@ public class PokemonRestController extends AbstractRestController {
 		try {
 			logger.info("Get Pokemons");
 			pokemonEntityList = pokemonsService.getTopHighest();
-			for (PokemonEntity pokemonEntity:pokemonEntityList
-			     ) {
+			for (PokemonEntity pokemonEntity : pokemonEntityList
+			) {
 				PokemonHeightDto pokemonHeightDto = new PokemonHeightDto();
 				pokemonHeightDto.setName(pokemonEntity.getName());
 				pokemonHeightDto.setHeight(String.valueOf(pokemonEntity.getHeight()));
@@ -69,7 +71,7 @@ public class PokemonRestController extends AbstractRestController {
 		} catch (Exception exception) {
 			logger.error(exception.getMessage(), exception);
 			logger.error("Error on calling Get Pokemons");
-			pokemonHeightListDto.setCommon(new Common(Common.ACK_KO, it.thinkopen.milanoteleport.modemmonitor.enumeration.ErrorCode.GENERIC_ERROR));
+			pokemonHeightListDto.setCommon(new Common(Common.ACK_KO, ErrorCode.GENERIC_ERROR));
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -82,7 +84,7 @@ public class PokemonRestController extends AbstractRestController {
 		try {
 			logger.info("Get Pokemons");
 			pokemonEntityList = pokemonsService.getTopHeaviest();
-			for (PokemonEntity pokemonEntity:pokemonEntityList
+			for (PokemonEntity pokemonEntity : pokemonEntityList
 			) {
 				PokemonBaseExperienceDto pokemonBaseExperienceDto = new PokemonBaseExperienceDto();
 				pokemonBaseExperienceDto.setName(pokemonEntity.getName());
@@ -96,20 +98,20 @@ public class PokemonRestController extends AbstractRestController {
 		} catch (Exception exception) {
 			logger.error(exception.getMessage(), exception);
 			logger.error("Error on calling Get Pokemons");
-			pokemonBaseExperieneListDto.setCommon(new Common(Common.ACK_KO, it.thinkopen.milanoteleport.modemmonitor.enumeration.ErrorCode.GENERIC_ERROR));
+			pokemonBaseExperieneListDto.setCommon(new Common(Common.ACK_KO, ErrorCode.GENERIC_ERROR));
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@GetMapping("/getPokemonsHeaviest")
 	public ResponseEntity<PokemonWeightListDto> getPokemonsWeight() {
-		PokemonWeightListDto pokemonWeightListDto  = new PokemonWeightListDto();
+		PokemonWeightListDto pokemonWeightListDto = new PokemonWeightListDto();
 		List<PokemonWeightDto> weightDtoList = new ArrayList<>();
 		List<PokemonEntity> pokemonEntityList = new ArrayList<>();
 		try {
 			logger.info("Get Pokemons");
 			pokemonEntityList = pokemonsService.getTopHeaviest();
-			for (PokemonEntity pokemonEntity:pokemonEntityList
+			for (PokemonEntity pokemonEntity : pokemonEntityList
 			) {
 				PokemonWeightDto pokemonWeightDto = new PokemonWeightDto();
 				pokemonWeightDto.setName(pokemonEntity.getName());
@@ -123,7 +125,7 @@ public class PokemonRestController extends AbstractRestController {
 		} catch (Exception exception) {
 			logger.error(exception.getMessage(), exception);
 			logger.error("Error on calling Get Pokemons");
-			pokemonWeightListDto.setCommon(new Common(Common.ACK_KO, it.thinkopen.milanoteleport.modemmonitor.enumeration.ErrorCode.GENERIC_ERROR));
+			pokemonWeightListDto.setCommon(new Common(Common.ACK_KO, ErrorCode.GENERIC_ERROR));
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

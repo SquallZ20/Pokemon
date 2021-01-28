@@ -1,7 +1,7 @@
 package com.pokemon.test.dto;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.thinkopen.milanoteleport.modemmonitor.enumeration.ErrorCode;
+import com.pokemon.test.enumeration.ErrorCode;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class PokemonHeightListDto extends SimpleResult{
+public class PokemonHeightListDto extends SimpleResult {
 
 	private static final long serialVersionUID = 7016111477194334170L;
 

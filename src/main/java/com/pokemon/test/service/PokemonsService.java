@@ -3,7 +3,6 @@ package com.pokemon.test.service;
 import com.pokemon.test.dao.PokemonDao;
 import com.pokemon.test.dto.PokemonRedDto;
 import com.pokemon.test.dto.PokemonSpecy;
-import com.pokemon.test.dto.PokemonHeightDto;
 import com.pokemon.test.model.PokemonEntity;
 import com.pokemon.test.util.Constants;
 import net.minidev.json.JSONObject;

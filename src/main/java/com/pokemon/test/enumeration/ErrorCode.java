@@ -1,4 +1,4 @@
-package it.thinkopen.milanoteleport.modemmonitor.enumeration;
+package com.pokemon.test.enumeration;
 
 public enum ErrorCode {
 

@@ -8,11 +8,11 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import java.util.List;
 
-import static com.pokemon.test.util.Constants.WEIGHT;
-import static com.pokemon.test.util.Constants.POKEMON_ID;
-import static com.pokemon.test.util.Constants.HEIGHT;
 import static com.pokemon.test.util.Constants.BASE_EXPERIENCE;
+import static com.pokemon.test.util.Constants.HEIGHT;
 import static com.pokemon.test.util.Constants.MAX_RESULTS_ACCEPTED;
+import static com.pokemon.test.util.Constants.POKEMON_ID;
+import static com.pokemon.test.util.Constants.WEIGHT;
 
 @Repository("PokemonDao")
 public class PokemonDao extends AbstractDao<Integer, PokemonEntity> {
