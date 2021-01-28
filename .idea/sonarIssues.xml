@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/dumpDataPreview">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/pokemon/test/controller/PokemonRestController.java">
           <value>
             <set />
